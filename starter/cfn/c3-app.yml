@@ -10,7 +10,7 @@ Parameters:
   KeyPair:
     Type: String
     Description: "Name of an existing KeyPair you will use to access the EC2 instances in this exercise. Be sure you have access to the private key file corresponding to this keypair."
-
+    Default: udacity
 
 Resources:
   InstanceRole:

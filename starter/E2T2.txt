@@ -1,3 +1,18 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+From AWS Config, the following insights and recommendations were collected:
+- securityhub-encrypted-volumes-0518661a - Encrypt volumes for EBS
+- securityhub-elb-deletion-protection-enabled-c48e234b - Enable deletion protection for elb
+- securityhub-ec2-instance-managed-by-ssm-153de5f8 - Manage EC2 instances with SSM
+- securityhub-ec2-instance-no-public-ip-f2c2d659 - Amazon EC2 instances should have no public IP
+
+
+From AWS Inspector, the following potential security issues were discovered and found to be of high severity on instance 
+i-002088a0131e1e10b (Web Service Instance - C3):
+- Port range 0 to 65535 is reachable from an Internet Gateway 
+- Port 22 is reachable from an Internet Gateway
+- Port 80 is reachable from an Internet Gateway
+- Port 5000 is reachable from an Internet Gateway 
+
+Changes for AWS inspector, open only port 5000 in the security group and move web service instance to private subnet.

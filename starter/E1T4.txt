@@ -1,5 +1,8 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
+1. Application server can be placed inside the private subnet so it's not accessible from the internet. 
+The security groups should be more restrictive and only allow access from port 5000 and block all other ports
 
 # Poor practice 2
+2. Use server side encryption on the s3 bucket

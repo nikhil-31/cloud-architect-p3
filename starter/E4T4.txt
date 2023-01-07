@@ -1,8 +1,13 @@
 
 # What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- Move the web application inside a security group
 
-# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent 
+the unauthorized access to the secrets bucket.
+The S3 bucket would still be accessiable from the internet as the IG allows access by any user within the VPC
 
 # Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+It will only apply to future uploads
 
 # What would happen if the original cloud formation templates are applied to this environment.
+All the changes we made using the console would be reset.
